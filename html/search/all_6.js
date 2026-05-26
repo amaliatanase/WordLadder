@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['mainwindow_0',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow::MainWindow()']]],
-  ['mainwindow_2ecpp_1',['mainwindow.cpp',['../mainwindow_8cpp.html',1,'']]]
+  ['isvalidword_0',['isValidWord',['../class_word_ladder_game.html#a54cb8471d9cb1fa4de6a806e4880049d',1,'WordLadderGame']]]
 ];
