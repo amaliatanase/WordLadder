@@ -1,0 +1,74 @@
+\doxysection{Graph.\+h}
+\hypertarget{_graph_8h_source}{}\label{_graph_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_graph_a8c626ac04708ae490bba05e1e713cda2}{Graph}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//each\ key\ in\ the\ map\ is\ a\ node\ of\ type\ T}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ the\ values\ is\ a\ set\ with\ its\ neighbors}}
+\DoxyCodeLine{00020\ \ \ \ \ std::map<T,\ std::set<T>>\ adjList;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \doxymbox{\hyperlink{class_graph_a8c626ac04708ae490bba05e1e713cda2}{Graph}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_graph_a77f28a3773538c6922c76d8e7ec19bab}{addNode}}(\textcolor{keyword}{const}\ T\&\ node);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_graph_a6865a1d720b3cc16d49fa7a4df3605f2}{addEdge}}(\textcolor{keyword}{const}\ T\&\ u,\ \textcolor{keyword}{const}\ T\&\ v);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ std::set<T>\ \doxymbox{\hyperlink{class_graph_a4c1aad4c9e748b4575f792969a66f251}{getNeighbors}}(\textcolor{keyword}{const}\ T\&\ node)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_graph_a7401ff5e0d23c33a9f827d09da352648}{printGraph}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//the\ constructor}}
+\DoxyCodeLine{00054\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00055\ \doxymbox{\hyperlink{class_graph_a8c626ac04708ae490bba05e1e713cda2}{Graph<T>::Graph}}()\ \{\}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{//add\ an\ isolated\ node}}
+\DoxyCodeLine{00058\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_graph_a77f28a3773538c6922c76d8e7ec19bab}{Graph<T>::addNode}}(\textcolor{keyword}{const}\ T\&\ node)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//if\ the\ node\ does\ not\ already\ exist\ in\ the\ map}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (adjList.find(node)\ ==\ adjList.end())}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//create\ an\ empty\ set\ for\ its\ neighbors}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ adjList[node]\ =\ std::set<T>();}
+\DoxyCodeLine{00064\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{//create\ an\ edge\ between\ 2\ nodes}}
+\DoxyCodeLine{00067\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_graph_a6865a1d720b3cc16d49fa7a4df3605f2}{Graph<T>::addEdge}}(\textcolor{keyword}{const}\ T\&\ v1,\ \textcolor{keyword}{const}\ T\&\ v2)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \doxymbox{\hyperlink{class_graph_a77f28a3773538c6922c76d8e7ec19bab}{addNode}}(v1);}
+\DoxyCodeLine{00070\ \ \ \ \ \doxymbox{\hyperlink{class_graph_a77f28a3773538c6922c76d8e7ec19bab}{addNode}}(v2);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//add\ v2\ as\ a\ neighbor\ of\ v1\ and\ viceversa}}
+\DoxyCodeLine{00073\ \ \ \ \ adjList[v1].insert(v2);}
+\DoxyCodeLine{00074\ \ \ \ \ adjList[v2].insert(v1);}
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{comment}{//returns\ the\ neighbors\ of\ a\ current\ node}}
+\DoxyCodeLine{00078\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00079\ std::set<T>\ \doxymbox{\hyperlink{class_graph_a4c1aad4c9e748b4575f792969a66f251}{Graph<T>::getNeighbors}}(\textcolor{keyword}{const}\ T\&\ node)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//if\ it\ exists\ in\ the\ map}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//use\ .at\ because\ of\ const,\ []\ might\ create\ a\ new\ node}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{if}\ (adjList.find(node)\ !=\ adjList.end())}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ adjList.at(node);}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//else\ return\ am\ empty\ set}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ std::set<T>();}
+\DoxyCodeLine{00086\ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_graph_a7401ff5e0d23c33a9f827d09da352648}{Graph<T>::printGraph}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//iterate\ through\ the\ pairs\ of\ the\ map}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pair\ :\ adjList)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//print\ the\ node}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ std::cout\ <<\ pair.first\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//and\ all\ of\ its\ neighbors}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ neighbor\ :\ pair.second)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ neighbor\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \}}
+
+\end{DoxyCode}

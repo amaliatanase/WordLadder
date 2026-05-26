@@ -1,0 +1,186 @@
+\doxysection{Word\+Ladder\+Game Class Reference}
+\hypertarget{class_word_ladder_game}{}\label{class_word_ladder_game}\index{WordLadderGame@{WordLadderGame}}
+
+
+Handles the core logic and backend operations for the Word Ladder game.  
+
+
+
+
+{\ttfamily \+\#include $<$Word\+Ladder\+Game.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_word_ladder_game_a1c1c0bd9bf17be17ae8a78ce4b2f78fa}\label{class_word_ladder_game_a1c1c0bd9bf17be17ae8a78ce4b2f78fa} 
+{\bfseries Word\+Ladder\+Game} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_word_ladder_game}{Word\+Ladder\+Game}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_word_ladder_game_ac8681cff8dada8cd18e54cd0b6fe3aff}{load\+Dictionary}} (const std::\+string \&filename)
+\begin{DoxyCompactList}\small\item\em Loads words from a specified text file into the dictionary. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_word_ladder_game_aea01449ac3149571d87d1e515a2ed95a}{build\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Builds the word graph using a wildcard pattern matching algorithm. Connects words that differ by exactly one letter. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_word_ladder_game_a003ad5e86db7700a8bc23103c2555b48}{print\+Game\+Graph}} () const
+\begin{DoxyCompactList}\small\item\em Prints the current state of the word graph to the standard output. Mainly used for debugging purposes. \end{DoxyCompactList}\item 
+std::\+vector$<$ std::\+string $>$ \doxymbox{\hyperlink{class_word_ladder_game_a92f153d94b08fc4f608000005368cd30}{find\+Shortest\+Path}} (const std::\+string \&start, const std::\+string \&target)
+\begin{DoxyCompactList}\small\item\em Finds the shortest path between two words using the Breadth-\/\+First Search (BFS) algorithm. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_word_ladder_game_a59a6ff03c4494dabebd76db2500826bf}{generate\+Valid\+Game}} (int length, std::\+string \&out\+Start, std::\+string \&out\+Target)
+\begin{DoxyCompactList}\small\item\em Randomly generates a valid game configuration with a guaranteed solution. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_word_ladder_game_a54cb8471d9cb1fa4de6a806e4880049d}{is\+Valid\+Word}} (const std::\+string \&word) const
+\begin{DoxyCompactList}\small\item\em Checks if a given word exists in the loaded dictionary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the core logic and backend operations for the Word Ladder game. 
+
+
+\begin{DoxyItemize}
+\item This class is responsible for loading the dictionary, building the graph of words, generating valid game states, and running the Breadth-\/\+First Search (BFS) algorithm to find optimal paths. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_word_ladder_game_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_word_ladder_game_aea01449ac3149571d87d1e515a2ed95a}\index{WordLadderGame@{WordLadderGame}!buildGraph@{buildGraph}}
+\index{buildGraph@{buildGraph}!WordLadderGame@{WordLadderGame}}
+\doxysubsubsection{\texorpdfstring{buildGraph()}{buildGraph()}}
+{\footnotesize\ttfamily \label{class_word_ladder_game_aea01449ac3149571d87d1e515a2ed95a} 
+void Word\+Ladder\+Game::\+build\+Graph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Builds the word graph using a wildcard pattern matching algorithm. Connects words that differ by exactly one letter. 
+
+Constructs the graph of words.
+
+
+\begin{DoxyItemize}
+\item Words are connected if they differ by exactly one letter. This is achieved efficiently by generating wildcard patterns (e.\+g., "{}\+C\texorpdfstring{$\ast$}{*}\+T"{} for "{}\+CAT"{}) and grouping matching words together. 
+\end{DoxyItemize}\Hypertarget{class_word_ladder_game_a92f153d94b08fc4f608000005368cd30}\index{WordLadderGame@{WordLadderGame}!findShortestPath@{findShortestPath}}
+\index{findShortestPath@{findShortestPath}!WordLadderGame@{WordLadderGame}}
+\doxysubsubsection{\texorpdfstring{findShortestPath()}{findShortestPath()}}
+{\footnotesize\ttfamily \label{class_word_ladder_game_a92f153d94b08fc4f608000005368cd30} 
+std::\+vector$<$ std::\+string $>$ Word\+Ladder\+Game::\+find\+Shortest\+Path (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{start}{, }\item[{const std::\+string \&}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Finds the shortest path between two words using the Breadth-\/\+First Search (BFS) algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & The starting word. \\
+\hline
+{\em target} & The target word. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of strings representing the path from start to target. Returns an empty vector if no path exists.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em start} & The starting word. \\
+\hline
+{\em target} & The target word to reach. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of strings representing the sequence of words in the shortest path. Returns an empty vector if no path exists or if the words are invalid. 
+\end{DoxyReturn}
+\Hypertarget{class_word_ladder_game_a59a6ff03c4494dabebd76db2500826bf}\index{WordLadderGame@{WordLadderGame}!generateValidGame@{generateValidGame}}
+\index{generateValidGame@{generateValidGame}!WordLadderGame@{WordLadderGame}}
+\doxysubsubsection{\texorpdfstring{generateValidGame()}{generateValidGame()}}
+{\footnotesize\ttfamily \label{class_word_ladder_game_a59a6ff03c4494dabebd76db2500826bf} 
+bool Word\+Ladder\+Game::\+generate\+Valid\+Game (\begin{DoxyParamCaption}\item[{int}]{length}{, }\item[{std::\+string \&}]{out\+Start}{, }\item[{std::\+string \&}]{out\+Target}{}\end{DoxyParamCaption})}
+
+
+
+Randomly generates a valid game configuration with a guaranteed solution. 
+
+Generates a valid starting and target word of the specified length that are guaranteed to have a solution path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & The required length of the words. \\
+\hline
+{\em out\+Start} & Reference to store the generated starting word. \\
+\hline
+{\em out\+Target} & Reference to store the generated target word. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a valid pair was found, False otherwise.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em length} & The required string length for the game words. \\
+\hline
+{\em out\+Start} & Reference variable where the chosen starting word will be stored. \\
+\hline
+{\em out\+Target} & Reference variable where the chosen target word will be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a valid pair was successfully generated, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_word_ladder_game_a54cb8471d9cb1fa4de6a806e4880049d}\index{WordLadderGame@{WordLadderGame}!isValidWord@{isValidWord}}
+\index{isValidWord@{isValidWord}!WordLadderGame@{WordLadderGame}}
+\doxysubsubsection{\texorpdfstring{isValidWord()}{isValidWord()}}
+{\footnotesize\ttfamily \label{class_word_ladder_game_a54cb8471d9cb1fa4de6a806e4880049d} 
+bool Word\+Ladder\+Game::\+is\+Valid\+Word (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{word}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a given word exists in the loaded dictionary. 
+
+Verifies if the provided word exists within the loaded dictionary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & The word to validate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the word is found, False otherwise.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em word} & The word to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the word is in the dictionary, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_word_ladder_game_ac8681cff8dada8cd18e54cd0b6fe3aff}\index{WordLadderGame@{WordLadderGame}!loadDictionary@{loadDictionary}}
+\index{loadDictionary@{loadDictionary}!WordLadderGame@{WordLadderGame}}
+\doxysubsubsection{\texorpdfstring{loadDictionary()}{loadDictionary()}}
+{\footnotesize\ttfamily \label{class_word_ladder_game_ac8681cff8dada8cd18e54cd0b6fe3aff} 
+void Word\+Ladder\+Game::\+load\+Dictionary (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Loads words from a specified text file into the dictionary. 
+
+Reads words from a text file and stores them in the dictionary vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The absolute or relative path to the dictionary file.\\
+\hline
+{\em filename} & The path to the text file containing the words. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_word_ladder_game_a003ad5e86db7700a8bc23103c2555b48}\index{WordLadderGame@{WordLadderGame}!printGameGraph@{printGameGraph}}
+\index{printGameGraph@{printGameGraph}!WordLadderGame@{WordLadderGame}}
+\doxysubsubsection{\texorpdfstring{printGameGraph()}{printGameGraph()}}
+{\footnotesize\ttfamily \label{class_word_ladder_game_a003ad5e86db7700a8bc23103c2555b48} 
+void Word\+Ladder\+Game::\+print\+Game\+Graph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Prints the current state of the word graph to the standard output. Mainly used for debugging purposes. 
+
+Outputs the adjacency list of the game\textquotesingle{}s graph to the console. 
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Word\+Ladder\+Game.\+h\item 
+\doxymbox{\hyperlink{_word_ladder_game_8cpp}{Word\+Ladder\+Game.\+cpp}}\end{DoxyCompactItemize}

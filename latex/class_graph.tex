@@ -1,0 +1,104 @@
+\doxysection{Graph\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_graph}{}\label{class_graph}\index{Graph$<$ T $>$@{Graph$<$ T $>$}}
+
+
+A generic template class representing an undirected graph.  
+
+
+
+
+{\ttfamily \+\#include $<$Graph.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_graph_a8c626ac04708ae490bba05e1e713cda2}\label{class_graph_a8c626ac04708ae490bba05e1e713cda2} 
+{\bfseries Graph} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_graph_a77f28a3773538c6922c76d8e7ec19bab}{add\+Node}} (const T \&node)
+\begin{DoxyCompactList}\small\item\em Adds an isolated node to the graph. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_graph_a6865a1d720b3cc16d49fa7a4df3605f2}{add\+Edge}} (const T \&u, const T \&v)
+\begin{DoxyCompactList}\small\item\em Creates an undirected edge between two nodes. If the nodes do not exist, they are automatically added to the graph. \end{DoxyCompactList}\item 
+std::\+set$<$ T $>$ \doxymbox{\hyperlink{class_graph_a4c1aad4c9e748b4575f792969a66f251}{get\+Neighbors}} (const T \&node) const
+\begin{DoxyCompactList}\small\item\em Retrieves all neighbors of a specific node. \end{DoxyCompactList}\item 
+\Hypertarget{class_graph_a7401ff5e0d23c33a9f827d09da352648}\label{class_graph_a7401ff5e0d23c33a9f827d09da352648} 
+void {\bfseries print\+Graph} () const
+\begin{DoxyCompactList}\small\item\em Prints the graph\textquotesingle{}s adjacency list to the standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Graph$<$ T $>$}
+A generic template class representing an undirected graph. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The data type of the nodes stored in the graph (e.\+g., std::\+string). Uses an adjacency list implemented with a std::\+map and std::\+set for efficient neighbor lookups. \\
+\hline
+\end{DoxyTemplParams}
+
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_graph_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_graph_a6865a1d720b3cc16d49fa7a4df3605f2}\index{Graph$<$ T $>$@{Graph$<$ T $>$}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily \label{class_graph_a6865a1d720b3cc16d49fa7a4df3605f2} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_graph}{Graph}}$<$ T $>$::\+add\+Edge (\begin{DoxyParamCaption}\item[{const T \&}]{u}{, }\item[{const T \&}]{v}{}\end{DoxyParamCaption})}
+
+
+
+Creates an undirected edge between two nodes. If the nodes do not exist, they are automatically added to the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & The first node. \\
+\hline
+{\em v} & The second node. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_graph_a77f28a3773538c6922c76d8e7ec19bab}\index{Graph$<$ T $>$@{Graph$<$ T $>$}!addNode@{addNode}}
+\index{addNode@{addNode}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addNode()}{addNode()}}
+{\footnotesize\ttfamily \label{class_graph_a77f28a3773538c6922c76d8e7ec19bab} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_graph}{Graph}}$<$ T $>$::\+add\+Node (\begin{DoxyParamCaption}\item[{const T \&}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Adds an isolated node to the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_graph_a4c1aad4c9e748b4575f792969a66f251}\index{Graph$<$ T $>$@{Graph$<$ T $>$}!getNeighbors@{getNeighbors}}
+\index{getNeighbors@{getNeighbors}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getNeighbors()}{getNeighbors()}}
+{\footnotesize\ttfamily \label{class_graph_a4c1aad4c9e748b4575f792969a66f251} 
+template$<$typename T$>$ \\
+std::\+set$<$ T $>$ \doxymbox{\hyperlink{class_graph}{Graph}}$<$ T $>$::\+get\+Neighbors (\begin{DoxyParamCaption}\item[{const T \&}]{node}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves all neighbors of a specific node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node whose neighbors are to be found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A set containing all neighbor nodes. Returns an empty set if the node has no neighbors or doesn\textquotesingle{}t exist. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Graph.\+h\end{DoxyCompactItemize}

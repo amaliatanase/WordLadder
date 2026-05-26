@@ -1,0 +1,71 @@
+\doxysection{mainwindow.\+h}
+\hypertarget{mainwindow_8h_source}{}\label{mainwindow_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QListWidget>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QStackedWidget>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}WordLadderGame.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow\ \textcolor{comment}{//MainWindow\ inherits\ from\ QMainWindow}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ Q\_OBJECT\ \textcolor{comment}{//needed\ for\ the\ signals\ and\ slots\ mechanism}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \doxymbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});\ \textcolor{comment}{//constructor}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \ \ \ \ \doxymbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();\ \textcolor{comment}{//destructor}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}\ slots:\ \textcolor{comment}{//these\ functions\ need\ to\ receive\ a\ signal}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ this\ will\ run\ when\ the\ button\ is\ clicked}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ onSolveButtonClicked();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//needed\ for\ game\ modes}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ onStartGameClicked();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ onSubmitWordClicked();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ onHintClicked();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ onShowAnalyticsClicked();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ interface\ elements\ for\ Automatic\ Mode}}
+\DoxyCodeLine{00070\ \ \ \ \ QLineEdit\ *startWordEdit;\ \textcolor{comment}{//the\ box\ where\ the\ starting\ word\ will\ be\ typed\ in}}
+\DoxyCodeLine{00071\ \ \ \ \ QLineEdit\ *targetWordEdit;\ \textcolor{comment}{//the\ box\ where\ the\ target\ word\ will\ be\ typed\ in}}
+\DoxyCodeLine{00072\ \ \ \ \ QListWidget\ *pathList;\ \textcolor{comment}{//the\ box\ where\ the\ list\ will\ be\ outputted}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ interface\ elements\ for\ Game\ Mode}}
+\DoxyCodeLine{00075\ \ \ \ \ QStackedWidget\ *gameStackedWidget;\ \textcolor{comment}{//\ Will\ keep\ the\ 2\ widgets}}
+\DoxyCodeLine{00076\ \ \ \ \ QWidget\ *gameSetupWidget;\ \textcolor{comment}{//\ Widget\ 1:\ Name\ and\ length\ of\ the\ word}}
+\DoxyCodeLine{00077\ \ \ \ \ QWidget\ *gameplayWidget;\ \textcolor{comment}{//\ Widger\ 2:\ The\ actual\ game}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ QLineEdit\ *playerNameEdit;\ \textcolor{comment}{//the\ box\ where\ the\ user's\ name\ will\ be\ typed\ in}}
+\DoxyCodeLine{00080\ \ \ \ \ QLineEdit\ *wordLengthEdit;\ \textcolor{comment}{//the\ box\ where\ the\ length\ of\ the\ word\ will\ be\ typed\ in}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ QLabel\ *currentWordLbl;\ \textcolor{comment}{//a\ label\ that\ indicates\ the\ current\ word}}
+\DoxyCodeLine{00083\ \ \ \ \ QLabel\ *targetWordLbl;\ \textcolor{comment}{//a\ label\ that\ indicates\ the\ target\ word}}
+\DoxyCodeLine{00084\ \ \ \ \ QLineEdit\ *nextWordInput;\ \textcolor{comment}{//the\ box\ where\ the\ user\ will\ type\ the\ next\ input}}
+\DoxyCodeLine{00085\ \ \ \ \ QListWidget\ *historyList;\ \textcolor{comment}{//\ the\ box\ with\ the\ list\ of\ the\ words\ inputted\ so\ far}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ QLineEdit\ *analyticsNameEdit;\ \textcolor{comment}{//\ box\ for\ name}}
+\DoxyCodeLine{00088\ \ \ \ \ QListWidget\ *statsList;\ \textcolor{comment}{//\ list\ to\ output\ stats}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ variables\ that\ remember\ the\ state\ of\ the\ current\ game}}
+\DoxyCodeLine{00091\ \ \ \ \ QString\ playerName;\ \textcolor{comment}{//save\ the\ username}}
+\DoxyCodeLine{00092\ \ \ \ \ std::string\ currentPlayingWord;\ \textcolor{comment}{//\ rememeber\ the\ word\ reached\ by\ the\ user}}
+\DoxyCodeLine{00093\ \ \ \ \ std::string\ targetPlayingWord;\ \textcolor{comment}{//\ remember\ the\ target\ word}}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{int}\ hintsUsed;\ \textcolor{comment}{//\ the\ no\ of\ hints\ used\ by\ the\ user}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{int}\ movesUsed;\ \textcolor{comment}{//\ the\ no\ of\ steps\ done\ by\ the\ user}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{int}\ optimalMoves;\ \textcolor{comment}{//\ this\ will\ keep\ the\ number\ of\ moves\ given\ by\ the\ BFS\ (no\ of\ steps\ in\ the\ shortest\ path)}}
+\DoxyCodeLine{00097\ \ \ \ \ std::vector<std::string>\ wordsUsedHistory;}
+\DoxyCodeLine{00101\ \ \ \ \ \doxymbox{\hyperlink{class_word_ladder_game}{WordLadderGame}}\ game;\ \textcolor{comment}{//an\ instance\ of\ the\ game}}
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}
