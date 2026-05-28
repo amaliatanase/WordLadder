@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['ladder_20game_20🪜_0',['Word Ladder Game 🪜',['../index.html',1,'']]],
-  ['loaddictionary_1',['loadDictionary',['../class_word_ladder_game.html#ac8681cff8dada8cd18e54cd0b6fe3aff',1,'WordLadderGame']]]
+  ['isvalidword_0',['isValidWord',['../class_word_ladder_game.html#a54cb8471d9cb1fa4de6a806e4880049d',1,'WordLadderGame']]]
 ];

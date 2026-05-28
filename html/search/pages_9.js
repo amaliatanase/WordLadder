@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🎮_20game_20modes_0',['🎮 Game Modes',['../index.html#autotoc_md2',1,'']]]
+  ['run_0',['🚀 How to Build and Run',['../index.html#autotoc_md4',1,'']]]
 ];

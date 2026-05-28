@@ -112,6 +112,14 @@ $(function(){initNavTree('index.html','',''); });
 <li><b>Data Management:</b> File I/O operations and CSV parsing for persistent gameplay history.</li>
 </ul>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+🚀 How to Build and Run</h1>
+<ul>
+<li><b>Build System:</b> The project is configured using <b>CMake</b>, making it easily compatible with modern IDEs like CLion.</li>
+<li><b>Dependencies:</b> You must have <b>Qt6</b> installed on your system.</li>
+<li><b>Setup:</b> Before building, open <span class="tt">CMakeLists.txt</span> and update the <span class="tt">CMAKE_PREFIX_PATH</span> variable to point to your local Qt6 installation directory.</li>
+<li><b>Dictionary Configuration:</b> Before running the application, open <span class="tt"><a class="el" href="mainwindow_8cpp.html" title="Implementation of the MainWindow class.">mainwindow.cpp</a></span> and update the absolute file path inside <span class="tt">game.loadDictionary("...")</span> to point to where <span class="tt">dictionary.txt</span> is located on your local machine.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 📚 Code Documentation</h1>
 <p>The entire source code is fully documented following professional Doxygen standards.</p>
 <p>👉 <b><a href="https://amaliatanase.github.io/WordLadder/html/index.html">Click Here to view the full HTML Doxygen Documentation</a></b> </p>

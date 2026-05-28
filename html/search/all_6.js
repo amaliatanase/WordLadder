@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isvalidword_0',['isValidWord',['../class_word_ladder_game.html#a54cb8471d9cb1fa4de6a806e4880049d',1,'WordLadderGame']]]
+  ['how_20to_20build_20and_20run_0',['🚀 How to Build and Run',['../index.html#autotoc_md4',1,'']]]
 ];

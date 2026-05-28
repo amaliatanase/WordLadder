@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['preview_0',['📸 Gameplay Preview',['../index.html#autotoc_md1',1,'']]],
-  ['printgamegraph_1',['printGameGraph',['../class_word_ladder_game.html#a003ad5e86db7700a8bc23103c2555b48',1,'WordLadderGame']]],
-  ['printgraph_2',['printGraph',['../class_graph.html#a7401ff5e0d23c33a9f827d09da352648',1,'Graph']]]
+  ['mainwindow_0',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow::MainWindow()']]],
+  ['mainwindow_2ecpp_1',['mainwindow.cpp',['../mainwindow_8cpp.html',1,'']]],
+  ['modes_2',['🎮 Game Modes',['../index.html#autotoc_md2',1,'']]]
 ];

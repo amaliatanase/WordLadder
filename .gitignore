@@ -4,3 +4,5 @@ build-*/
 *.csv
 
 .DS_Store
+build/
+.DS_Store

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📸_20gameplay_20preview_0',['📸 Gameplay Preview',['../index.html#autotoc_md1',1,'']]]
+  ['🎮_20game_20modes_0',['🎮 Game Modes',['../index.html#autotoc_md2',1,'']]]
 ];

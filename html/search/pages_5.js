@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['preview_0',['📸 Gameplay Preview',['../index.html#autotoc_md1',1,'']]]
+  ['how_20to_20build_20and_20run_0',['🚀 How to Build and Run',['../index.html#autotoc_md4',1,'']]]
 ];

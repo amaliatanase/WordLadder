@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7emainwindow_0',['~MainWindow',['../class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]]
+  ['technologies_20data_20structures_0',['🛠️ Technologies &amp;amp; Data Structures',['../index.html#autotoc_md3',1,'']]],
+  ['to_20build_20and_20run_1',['🚀 How to Build and Run',['../index.html#autotoc_md4',1,'']]]
 ];

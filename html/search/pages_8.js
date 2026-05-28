@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['word_20ladder_20game_20🪜_0',['Word Ladder Game 🪜',['../index.html',1,'']]]
+  ['preview_0',['📸 Gameplay Preview',['../index.html#autotoc_md1',1,'']]]
 ];

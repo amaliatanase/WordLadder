@@ -23,6 +23,12 @@ A modern, interactive C++ implementation of the classic Word Ladder puzzle, feat
 * **Custom Structures:** A generic Graph template implemented from scratch using `std::map` and `std::set` for $O(1)$/$O(\log n)$ neighbor lookups.
 * **Data Management:** File I/O operations and CSV parsing for persistent gameplay history.
 
+## 🚀 How to Build and Run
+* **Build System:** The project is configured using **CMake**, making it easily compatible with modern IDEs like CLion.
+* **Dependencies:** You must have **Qt6** installed on your system.
+* **Setup:** Before building, open `CMakeLists.txt` and update the `CMAKE_PREFIX_PATH` variable to point to your local Qt6 installation directory.
+* **Dictionary Configuration:** Before running the application, open `mainwindow.cpp` and update the absolute file path inside `game.loadDictionary("...")` to point to where `dictionary.txt` is located on your local machine.
+
 ## 📚 Code Documentation
 The entire source code is fully documented following professional Doxygen standards. 
 

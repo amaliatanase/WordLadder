@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📚_20code_20documentation_0',['📚 Code Documentation',['../index.html#autotoc_md4',1,'']]]
+  ['_7emainwindow_0',['~MainWindow',['../class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]]
 ];
